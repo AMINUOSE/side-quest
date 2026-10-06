@@ -1,0 +1,350 @@
+/* ==========================================================
+   Shared styles: design tokens, reset, layout, navbar, footer
+   Theme: light, friendly game-site look with a deep purple accent
+   ========================================================== */
+
+:root {
+  /* Neutral ramp (warm grey, no tint) */
+  --color-ink: #151413;
+  --color-muted: #5b5853;
+  --color-line: #dedbd5;
+  --color-paper-alt: #f4f2ee;
+  --color-paper: #ffffff;
+  --color-page: #faf9f6;
+
+  /* Single accent (deep purple) */
+  --color-accent: #4a1d96;
+  --color-accent-dark: #2f1066;
+
+  /* Crossword colors */
+  --color-block: #151413;
+  --color-correct: #c4f0cf;
+  --color-wrong: #ffd1d1;
+
+  /* Semantic colors */
+  --color-bg: var(--color-page);
+  --color-surface: var(--color-paper);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-muted);
+  --color-border: var(--color-line);
+  --color-on-accent: var(--color-paper);
+
+  /* Type scale */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.25rem;
+  --text-display: clamp(2.5rem, 9vw, 4.5rem);
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  /* Shape and misc */
+  --radius: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+  --content-width: 64rem;
+  --reading-width: 65ch;
+  --tap-target: 44px;
+  --transition: 150ms ease-in-out;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 var(--space-3);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+h4 {
+  font-size: var(--text-base);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+  max-width: var(--reading-width);
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* ---------- Focus ---------- */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--space-1);
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3) var(--space-6);
+}
+
+.page-section {
+  margin-bottom: var(--space-6);
+}
+
+.page-intro {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+/* Small label above headings, e.g. "01" or "Daily mini games" */
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-paper-alt);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-ink);
+  color: var(--color-on-accent);
+  transform: translateY(-2px);
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  border-radius: 0 0 var(--radius) var(--radius);
+  transform: translateY(-120%);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline-color: var(--color-ink);
+  outline-offset: -4px;
+}
+
+/* ---------- Navbar ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 2px solid var(--color-ink);
+}
+
+.site-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-1) var(--space-3);
+}
+
+.site-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+  gap: var(--space-2);
+  min-height: var(--tap-target);
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.site-nav-brand:hover {
+  color: var(--color-accent);
+}
+
+.site-nav-list {
+  display: flex;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target);
+  min-width: var(--tap-target);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.site-nav-list a:hover {
+  background-color: var(--color-paper-alt);
+  color: var(--color-accent);
+}
+
+/* Current page indicator: filled purple pill */
+.site-nav-list a[aria-current="page"] {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.site-nav-list a[aria-current="page"]:focus-visible {
+  outline-color: var(--color-ink);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: var(--space-5) var(--space-3);
+  border-top: 2px solid var(--color-ink);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0 auto;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 600px) {
+  .site-nav {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .site-nav-brand {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .site-nav-list {
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
+  .site-nav-list li {
+    flex: 1;
+  }
+
+  .site-nav-list a {
+    padding: 0 var(--space-1);
+    font-size: var(--text-sm);
+  }
+
+  main {
+    padding: var(--space-4) var(--space-3) var(--space-5);
+  }
+
+  .page-section {
+    margin-bottom: var(--space-5);
+  }
+
+  .card {
+    box-shadow: 3px 3px 0 var(--color-ink);
+  }
+}
+
+@media (min-width: 601px) {
+  h1 {
+    font-size: 3rem;
+  }
+}

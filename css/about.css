@@ -1,0 +1,82 @@
+/* About page */
+
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.about-intro-text {
+  flex: 1 1 20rem;
+}
+
+.about-photo {
+  flex: 0 1 18rem;
+  width: 18rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 30%;
+  margin: 0 auto;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: 6px 6px 0 var(--color-accent);
+}
+
+.entry {
+  margin-bottom: var(--space-3);
+}
+
+.entry h3 {
+  margin-bottom: var(--space-1);
+}
+
+.entry-meta {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.entry h4 {
+  margin: var(--space-3) 0 var(--space-1);
+  color: var(--color-accent);
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.entry li {
+  max-width: var(--reading-width);
+  margin-bottom: var(--space-1);
+}
+
+.entry li::marker {
+  color: var(--color-accent);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  font-weight: 700;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.skill-list li:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}

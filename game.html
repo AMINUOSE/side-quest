@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Crossword | Side Quest</title>
+    <meta name="description" content="A playable 5x5 mini crossword.">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/game.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="skip-link" href="#main">Skip to main content</a>
+      <nav class="site-nav" aria-label="Main">
+        <a class="site-nav-brand" href="index.html">
+          <img src="images/logo.svg" alt="" width="32" height="32">
+          <span>Side Quest &middot; Zekai Chen</span>
+        </a>
+        <ul class="site-nav-list" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="game.html" aria-current="page">Puzzle</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <h1>Mini Crossword</h1>
+      <p class="page-intro">
+        A CS-flavored 5&times;5 puzzle. Click or tab into a square and type a letter,
+        then press Tab to move on to the next square.
+      </p>
+
+      <section class="puzzle page-section" aria-labelledby="grid-title">
+        <h2 id="grid-title">The grid</h2>
+
+        <input class="check-toggle" type="checkbox" id="check-answers">
+        <label class="check-label" for="check-answers">Highlight my answers</label>
+
+        <div class="puzzle-layout">
+          <div class="crossword" role="group" aria-labelledby="grid-title">
+            <!-- Row 1 -->
+            <label class="cell"><span class="cell-number" aria-hidden="true">1</span><input type="text" maxlength="1" pattern="[Cc]" placeholder=" " autocomplete="off" aria-label="Row 1, column 1, 1 Across and 1 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Ll]" placeholder=" " autocomplete="off" aria-label="Row 1, column 2, 1 Across"></label>
+            <label class="cell"><span class="cell-number" aria-hidden="true">2</span><input type="text" maxlength="1" pattern="[Aa]" placeholder=" " autocomplete="off" aria-label="Row 1, column 3, 1 Across and 2 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Ss]" placeholder=" " autocomplete="off" aria-label="Row 1, column 4, 1 Across"></label>
+            <label class="cell"><span class="cell-number" aria-hidden="true">3</span><input type="text" maxlength="1" pattern="[Ss]" placeholder=" " autocomplete="off" aria-label="Row 1, column 5, 1 Across and 3 Down"></label>
+            <!-- Row 2 -->
+            <label class="cell"><input type="text" maxlength="1" pattern="[Aa]" placeholder=" " autocomplete="off" aria-label="Row 2, column 1, 1 Down"></label>
+            <span class="cell cell-block" aria-hidden="true"></span>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Gg]" placeholder=" " autocomplete="off" aria-label="Row 2, column 3, 2 Down"></label>
+            <span class="cell cell-block" aria-hidden="true"></span>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Pp]" placeholder=" " autocomplete="off" aria-label="Row 2, column 5, 3 Down"></label>
+            <!-- Row 3 -->
+            <label class="cell"><span class="cell-number" aria-hidden="true">4</span><input type="text" maxlength="1" pattern="[Cc]" placeholder=" " autocomplete="off" aria-label="Row 3, column 1, 4 Across and 1 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Uu]" placeholder=" " autocomplete="off" aria-label="Row 3, column 2, 4 Across"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Rr]" placeholder=" " autocomplete="off" aria-label="Row 3, column 3, 4 Across and 2 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Vv]" placeholder=" " autocomplete="off" aria-label="Row 3, column 4, 4 Across"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Ee]" placeholder=" " autocomplete="off" aria-label="Row 3, column 5, 4 Across and 3 Down"></label>
+            <!-- Row 4 -->
+            <label class="cell"><input type="text" maxlength="1" pattern="[Hh]" placeholder=" " autocomplete="off" aria-label="Row 4, column 1, 1 Down"></label>
+            <span class="cell cell-block" aria-hidden="true"></span>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Ee]" placeholder=" " autocomplete="off" aria-label="Row 4, column 3, 2 Down"></label>
+            <span class="cell cell-block" aria-hidden="true"></span>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Nn]" placeholder=" " autocomplete="off" aria-label="Row 4, column 5, 3 Down"></label>
+            <!-- Row 5 -->
+            <label class="cell"><span class="cell-number" aria-hidden="true">5</span><input type="text" maxlength="1" pattern="[Ee]" placeholder=" " autocomplete="off" aria-label="Row 5, column 1, 5 Across and 1 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Vv]" placeholder=" " autocomplete="off" aria-label="Row 5, column 2, 5 Across"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Ee]" placeholder=" " autocomplete="off" aria-label="Row 5, column 3, 5 Across and 2 Down"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Nn]" placeholder=" " autocomplete="off" aria-label="Row 5, column 4, 5 Across"></label>
+            <label class="cell"><input type="text" maxlength="1" pattern="[Tt]" placeholder=" " autocomplete="off" aria-label="Row 5, column 5, 5 Across and 3 Down"></label>
+          </div>
+
+          <section class="clues" aria-labelledby="clues-title">
+            <h2 id="clues-title" class="clues-title">Clues</h2>
+            <section aria-labelledby="across-title">
+              <h3 id="across-title">Across</h3>
+              <ol class="clue-list" role="list">
+                <li value="1"><span class="clue-number">1</span> Blueprint for creating objects in OOP</li>
+                <li value="4"><span class="clue-number">4</span> A line that bends smoothly</li>
+                <li value="5"><span class="clue-number">5</span> A mouse click or key press, to a GUI program</li>
+              </ol>
+            </section>
+            <section aria-labelledby="down-title">
+              <h3 id="down-title">Down</h3>
+              <ol class="clue-list" role="list">
+                <li value="1"><span class="clue-number">1</span> Fast temporary storage near the processor</li>
+                <li value="2"><span class="clue-number">2</span> Say yes</li>
+                <li value="3"><span class="clue-number">3</span> Used up, like time or money</li>
+              </ol>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="solution-title">
+        <h2 id="solution-title">Stuck?</h2>
+        <details class="solution">
+          <summary>Reveal the solution</summary>
+          <div class="solution-body">
+            <div class="crossword crossword-solution" aria-hidden="true">
+              <span class="cell">C</span><span class="cell">L</span><span class="cell">A</span><span class="cell">S</span><span class="cell">S</span>
+              <span class="cell">A</span><span class="cell cell-block"></span><span class="cell">G</span><span class="cell cell-block"></span><span class="cell">P</span>
+              <span class="cell">C</span><span class="cell">U</span><span class="cell">R</span><span class="cell">V</span><span class="cell">E</span>
+              <span class="cell">H</span><span class="cell cell-block"></span><span class="cell">E</span><span class="cell cell-block"></span><span class="cell">N</span>
+              <span class="cell">E</span><span class="cell">V</span><span class="cell">E</span><span class="cell">N</span><span class="cell">T</span>
+            </div>
+            <p><strong>Across:</strong> 1 CLASS, 4 CURVE, 5 EVENT.</p>
+            <p><strong>Down:</strong> 1 CACHE, 2 AGREE, 3 SPENT.</p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Zekai Chen.</p>
+    </footer>
+  </body>
+</html>
